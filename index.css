@@ -1,0 +1,66 @@
+main {
+    padding: 40px;
+    display: grid;
+    grid-template-areas: 
+        "ico nav"
+        "con con"
+        "fot fot";
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 6fr 1fr;
+    grid-gap: 40px;
+    margin: 0 auto;
+    width: 1000px;
+    align-items: center;
+}
+
+#ico {
+    grid-area: ico;
+    align-self: center;
+    justify-self: center;
+}
+
+#ico img {
+    width: 130px;
+    margin: 0 -1px -2.5px 0;
+}
+
+nav {
+    grid-area: nav;
+    align-self: center;
+    align-self: center;
+    justify-self: center;
+    width: 500px;
+    font-size: .8em;
+}
+
+nav .wContent {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+nav a {
+    padding: 5px 10px;
+}
+
+#con {
+    grid-area: con;
+    align-self: stretch;
+}
+
+#con .wContent {
+    height: 626px;
+}
+
+#fot {
+    grid-area: fot;
+    align-self: center;
+    text-align: center;
+}
+
+#fot .wContent {
+    padding: 10px 0;
+    font-size: .8em;
+}
