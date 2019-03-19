@@ -7,7 +7,7 @@
 
 @font-face {
     font-family: Verdana;
-    scr: url("fonts/Verdana.ttf");
+    src: url("fonts/Verdana.ttf");
 }
 
 html {
@@ -27,114 +27,71 @@ main {
     align-items: center;
 }
 
-.window {
-    border: var(--border-width) solid;
-    border-image: url(img/border1.png) 5 stretch;
-    border-image-outset: 0;
-    position: relative;
-    min-width: 27px;
-    min-height: 27px;
+.w {
+    border: solid;
+    border-width: 18px 18px 18px 18px;
+    border-image: url(img/border.png) 18 stretch;
+    background-color: var(--panel-color);
+    min-height: 1px;
+    min-width: 1px;
 }
 
-.window::before {
-    background-image: url(img/border1TL.png);
-    display: block;
-    content: "";
-    width: 18px;
-    height: 18px;
-    position: absolute;
-    left: -5px;
-    top: -5px;
+.wc {
+    margin: -13px -14px -14px -13px;
 }
 
-.window::after {
-    background-image: url(img/border1TR.png);
-    display: block;
-    content: "";
-    width: 18px;
-    height: 18px;
-    position: absolute;
-    right: -5px;
-    top: -5px;
+.wc * {
+    margin-bottom: -1.5px;
 }
 
-.wBorder {
-    width: 100%;
-    position: absolute;
-    bottom: 0px;
+.wt + .wc {
+    margin-top: 0px;
 }
 
-.wBorder::before {
-    background-image: url(img/border1BL.png);
-    display: block;
-    content: "";
-    width: 18px;
-    height: 18px;
-    position: absolute;
-    bottom: -5px;
-    left: -5px;
+.wt + .wc * {
+    margin-top: -1px;
 }
 
-.wBorder::after {
-    background-image: url(img/border1BR.png);
-    display: block;
-    content: "";
-    width: 18px;
-    height: 18px;
-    position: absolute;
-    bottom: -5px;
-    right: -5px;
-}
-
-.wTitle {
+.wt {
     background-image: url("img/titlebar.png");
-    width: calc(100% + 3px);
     height: 14px;
     position: relative;
     top: -1px;
     left: -1px;
     font-size: 10px;
     text-align: center;
+    margin: -13px -16px -1px -13px;
+    padding-right: 40px;
 }
 
-.wTitle::before {
+.wt::before {
     background-image: url(img/titlebarL.png);
-    display: block;
     content: "";
-    width: 14px;
+    display: block;
+    float: left;
     height: 14px;
-    position: absolute;
     left: 0px;
+    margin-right: 10px;
     top: 0px;
-    z-index: 1;
+    width: 14px;
 }
 
-.wTitle::after {
+.wt::after {
     background-image: url(img/titlebarR.png);
-    display: block;
     content: "";
-    width: 29px;
+    display: block;
+    float: right;
     height: 14px;
     position: absolute;
     right: 0px;
     top: 0px;
-    z-index: 1;
-}
-
-.wTitle p {
-    margin-right: 14px;
-}
-
-.wContent {
-    background-color: var(--panel-color);
-    margin: -1px 0 -1px 0;
-    width: calc(100% + 1px);
+    width: 29px;
 }
 
 .panel {
-    border: 3px solid;
+    border: 1px solid;
     background-color: var(--panel-color);
-    border-image: url("img/panel.png") 2 stretch;
+    border-image: url("img/panel.png") 1 stretch;
     text-decoration: none;
     color: black;
 }
