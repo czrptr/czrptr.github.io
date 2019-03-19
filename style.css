@@ -1,0 +1,140 @@
+:root {
+    --main-blue: #00C0FF;
+    --main-blue-dark: #0084B0;
+    --border-width: 5px;
+    --panel-color: #999;
+}
+
+@font-face {
+    font-family: Verdana;
+    scr: url("fonts/Verdana.ttf");
+}
+
+html {
+    font-family: Verdana;
+}
+
+body {
+    background-color: var(--main-blue-dark);
+    min-height: 100vh;
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.window {
+    border: var(--border-width) solid;
+    border-image: url(img/border1.png) 5 stretch;
+    border-image-outset: 0;
+    position: relative;
+    min-width: 27px;
+    min-height: 27px;
+}
+
+.window::before {
+    background-image: url(img/border1TL.png);
+    display: block;
+    content: "";
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    left: -5px;
+    top: -5px;
+}
+
+.window::after {
+    background-image: url(img/border1TR.png);
+    display: block;
+    content: "";
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    right: -5px;
+    top: -5px;
+}
+
+.wBorder {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+}
+
+.wBorder::before {
+    background-image: url(img/border1BL.png);
+    display: block;
+    content: "";
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    bottom: -5px;
+    left: -5px;
+}
+
+.wBorder::after {
+    background-image: url(img/border1BR.png);
+    display: block;
+    content: "";
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+}
+
+.wTitle {
+    background-image: url("img/titlebar.png");
+    width: calc(100% + 3px);
+    height: 14px;
+    position: relative;
+    top: -1px;
+    left: -1px;
+    font-size: 10px;
+    text-align: center;
+}
+
+.wTitle::before {
+    background-image: url(img/titlebarL.png);
+    display: block;
+    content: "";
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+}
+
+.wTitle::after {
+    background-image: url(img/titlebarR.png);
+    display: block;
+    content: "";
+    width: 29px;
+    height: 14px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: 1;
+}
+
+.wTitle p {
+    margin-right: 14px;
+}
+
+.wContent {
+    background-color: var(--panel-color);
+    margin: -1px 0 -1px 0;
+    width: calc(100% + 1px);
+}
+
+.panel {
+    border: 3px solid;
+    background-color: var(--panel-color);
+    border-image: url("img/panel.png") 2 stretch;
+    text-decoration: none;
+    color: black;
+}
